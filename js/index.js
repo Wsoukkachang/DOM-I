@@ -38,27 +38,27 @@ const siteContent = {
 };
 
 //updated src for images 
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+let logo = document.getElementById('logo-img');
+logo.setAttribute('src', siteContent['nav']['img-src'])
 
-let headerImg = document.getElementById("cta-img");
-headerImg.setAttribute('src', siteContent["cta"]["img-src"])
+let headerImg = document.getElementById('cta-img');
+headerImg.setAttribute('src', siteContent['cta']['img-src'])
 
 let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
 // selectors for nav
 let navItem = document.querySelectorAll('a');
-navItem[0].textContent = siteContent.nav["nav-item-1"];
-navItem[1].textContent = siteContent.nav["nav-item-2"];
-navItem[2].textContent = siteContent.nav["nav-item-3"];
-navItem[3].textContent = siteContent.nav["nav-item-4"];
-navItem[4].textContent = siteContent.nav["nav-item-5"];
-navItem[5].textContent = siteContent.nav["nav-item-6"];
+navItem[0].textContent = siteContent['nav']["nav-item-1"];
+navItem[1].textContent = siteContent['nav']["nav-item-2"];
+navItem[2].textContent = siteContent['nav']["nav-item-3"];
+navItem[3].textContent = siteContent['nav']["nav-item-4"];
+navItem[4].textContent = siteContent['nav']["nav-item-5"];
+navItem[5].textContent = siteContent['nav']["nav-item-6"];
 
 // selector for h1
 let h1 = document.querySelector('h1');
-h1.textContent = siteContent.cta.h1;
+h1.textContent = siteContent['cta']['h1'];
 
 // selector for button
 let button = document.querySelector('button');
@@ -84,3 +84,24 @@ p[5].textContent = siteContent['contact']['address'];
 p[6].textContent = siteContent['contact']['phone'];
 p[7].textContent = siteContent['contact']['email'];
 p[8].textContent = siteContent['footer']['copyright'];
+
+// change the color of the navigation text to be green
+navItem.forEach((item) => {
+  item.style.color = "green";
+})
+
+const classNameTestConversion = Array.from(classNameTest);
+
+// utilize .appendChild() and .prepend() to add two new items to the navigation system
+let textItem = document.createElement("Text");    
+let newNavItem1 = document.createTextNode('Link1');
+
+textItem.appendChild(newNavItem1);
+
+let navItems = document.getElementById('nav'); // not working
+
+navItems.appendChild(textItem);
+
+// let newNavItem2 = document.createTextNode('Link2');
+
+// navItems.prepend(newNavItem2); 
