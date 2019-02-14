@@ -90,18 +90,15 @@ navItem.forEach((item) => {
   item.style.color = "green";
 })
 
-const classNameTestConversion = Array.from(classNameTest);
-
 // utilize .appendChild() and .prepend() to add two new items to the navigation system
-let textItem = document.createElement("Text");    
-let newNavItem1 = document.createTextNode('Link1');
 
-textItem.appendChild(newNavItem1);
+navItem = document.getElementsByTagName('nav')[0];
 
-let navItems = document.getElementById('nav'); // not working
+let createNewNode = (name) => {
+  let newNav1 = document.createElement('a');
+  newNav1.innerHTML = name;
+  return newNav1;
+}
 
-navItems.appendChild(textItem);
-
-// let newNavItem2 = document.createTextNode('Link2');
-
-// navItems.prepend(newNavItem2); 
+navItem.prepend(createNewNode('Link1'));
+navItem.append(createNewNode('Link2'));
